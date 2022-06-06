@@ -16,6 +16,7 @@
     <script src="src/js/ROPS_BLONKSmainABI.js"></script>
     <script src="src/js/RINK_BLONKSmainABI.js"></script>
     <script src="src/js/mintBLONK.js"></script>
+    <script src="src/js/preview.js"></script>
     <!--
     Website by Matto
     Matto.xyz
@@ -73,10 +74,31 @@
           </div>
         </form>
         <hr>
-      </section><!-- ./ Preview -->
+      </section>
+      
+      <!-- Preview -->
+      <section id="preview">
+        <h2>SVG Retrieval: Current and Preview</h2>
+        <h5>To retrieve a BLONKS SVG from the Ethereum blockchain, you must first connect to MetaMask (button above), then enter a valid Token ID in the form below.</h5>
+        <p>OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</p>
+          <div id="tokenPreviewer" class="align-items-center">
+            <div id="svgPlaceholder" style="text-align:center;"></div>
+            <br>
+            <form _lpchecked="1">
+                <div class="grid">
+                  <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required autofocus>
+                  <input type="string" id="address" placeholder="Address (Optional)">
+                  <button type="submit" id="submit_button" class="btn btn-outline-dark btn-lg btn-round"
+                    onclick="previewButton(); return false">Retrieve SVG</button>
+                </div>  
+            </form>
+          </div>
+          <br>
+        <hr>
+      </section>
 
       <section id="tldr">
-        <h1>Let's do the tl;dr's first.</h1>
+        <h1>ALL ABOUT BLONKS... Let's do the tl;dr's first.</h1>
         <h3>What are BLONKS?</h3>
         <p>BLONKS is a collection of 4,444 completely on-chain vector-graphic illustrations with personality and with unique design mechanics. BLONKS token images change when transferred between wallets, they're licensed CC0, and they live on Ethereum.</p>
         <h3>When, where, why, who, and how much?</h3>
@@ -92,7 +114,7 @@
         <h1>Now let's get into more details.</h1>
         <p>BLONKS are 100% on-chain, generative vector-graphic illustrations with no external dependencies. The BLONKS CC0 project is coded in the language of the Ethereum blockchain itself (solidity) and its contracts generate all token data (SVG images and metadata) entirely from data on the blockchain. There is no web-app; there are no hosted files to maintain, update, or accidentally lose. The NFTs will exist as long as the Ethereum network exists, and we all kinda think that's a really really long time.</p>
         <p>The project is as pure as what solidity was designed for - financial contracts - yet the resulting BLONKS NFTs are full of life and personality. Other on-chain SVG illustration projects typically utilize either run-line-encoding (pixellated-looking images) or are completely built by combining pre-made assets (head <em>a</em>, with nose <em>b</em>, eyes <em>c</em>, ears <em>d</em>, mouth <em>e</em>, etc.), but BLONKS are different. Entropy (AKA randomness) is taken from the owner's address, details regarding the block that the BLONK was minted in, and from an on-chain psuedo-random hash. From these inputs, over a hundred different generative values are calculated and passed between the various BLONKS smart contracts (a feat in itself). Each component contract pushes the limits of what Ethereum and Solidity can handle, and when working together, the combination of contracts become the BLONKS 'back-end.'</p>
-        <p>The images created are infinitely-scalable, vector-graphic SVGs. By using the 'getSVG' function from the smart contract (function #17 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), anyone can download the easily legible and editable SVG code ("&lt;svg&gt;...&lt;/svg&gt;"). An internet search for 'SVG Code Viewer' will return free browser-based apps to view the SVG code (like <a href="https://jsfiddle.net/mpkh05yt/13/" target="_blank">this one</a> Matto "made" on a code-sharing site), or you paste the code into a text editor, save it with the extension '.svg', and then open the file in a web browser. The 'previewSVG' function on the smart contract works in a similar way (function #25 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), but it allows the input of a custom address to show what the NFT would look like if owned by that address.</p>
+        <p>The images created are infinitely-scalable, vector-graphic SVGs. The SVG Retrieval tool above simply retrieves and displays the SVG data that is rendered on the blockchain. Anyone can get the SVG manually by using the 'getSVG' function from the smart contract (function #17 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan). An internet search for 'SVG Code Viewer' will return free browser-based apps to view the SVG code (like <a href="https://jsfiddle.net/mpkh05yt/13/" target="_blank">this one</a> Matto "made" on a code-sharing site), or you paste the code into a text editor, save it with the extension '.svg', and then open the file in a web browser. The 'previewSVG' function on the smart contract works in a similar way (function #25 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), but it allows the input of a custom address to show what the NFT would look like if owned by that address.</p>
         <p>The address that owns a BLONKS NFT determines the base-image of the BLONK, which includes the starting color palette. There are 5,832,000 possible <em>starting</em> color palettes, and as each SVG is generated, entropy from the owner's address is used to determine how the color components change. There are over 1.6 Nonillion (10^30) different color combinations possible in the base-image of every BLONK, which is more of a fun fact than a useful bit of information. Also, the owner address is used as entropy to determine the shape and positions of different BLONK facial features, like eyes, eyebrows, nose, mole, head height and width, etc. Simply put, BLONKS are super colorful and have an incomprehensible variability even without their token-assigned and locked 'attributes.'</p>
         <p>A BLONK's attributes (ex. hair, headband, teeth, etc), are determined by the psuedo-random hash assigned to the NFT at mint. These attributes <strong>do not change</strong> when the NFT is bought/sold/transferred. These are where 'rarity' comes in, but note these calculations do not consider any aspects or details of the base-image, which changes every transfer. These attributes are applied over the top of the base-image, sometimes continuing the color changes from the BLONK (hair/beard color), and sometimes using pre-determined colors (ex. eyewear). Because BLONKS NFTs have different size heads and necks, some attributes scale with the BLONK to achieve a 'custom fit'. The grandest example of this is with the eyewear; BLONKS have differently sized and positioned eyes, noses, and ears, so every set of eyewear is custom crafted by the code to fit the BLONK.</p>
         <p>The code that creates BLONKS is impressive, and I hope that a BLONK NFT's unique look is appreciated. There are 4,444 BLONKS, a number Matto chose based on some simple criteria. First, it had to be in the thousands to support a community. Even if every collector owned 4, there would be over 1000 separate holders. Second, because the collection is extremely variable in visual aspects and can continually change, fewer BLONKS would create a collection that was less overwhelming to browse. Third, because BLONKS are all made of the same type of SVG shape (&lt;rect/&gt;'s), an edition size that consisted of the same digit was desired (1111, 2222, 3333, 4444, 5555, etc). Finally, because BLONKS are all made of rectangles (4-sided shapes), 4444 was chosen.</p>
