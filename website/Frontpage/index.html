@@ -82,16 +82,16 @@
         <h5>To retrieve a BLONKS SVG from the Ethereum blockchain, you must first connect to MetaMask (button above), then enter a valid Token ID in the form below.</h5>
         <p>OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</p>
           <div id="tokenPreviewer" class="align-items-center">
-            <div id="svgPlaceholder" style="text-align:center;"></div>
             <br>
             <form _lpchecked="1">
                 <div class="grid">
-                  <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required autofocus>
+                  <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required>
                   <input type="string" id="address" placeholder="Address (Optional)">
                   <button type="submit" id="submit_button" class="btn btn-outline-dark btn-lg btn-round"
                     onclick="previewButton(); return false">Retrieve SVG</button>
                 </div>  
             </form>
+            <div id="svgPlaceholder" style="text-align:center;"></div>
           </div>
           <br>
         <hr>
