@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BLONKS CC0</title>
     <meta name="description" content="BLONKS CC0 Website.">
@@ -22,16 +23,16 @@
     Matto.xyz
     @MonkMatto
     (C) Matto 2022
-    
-    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
-    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
     IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-    NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS. 
-    YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING. 
-    THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART 
+    NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS.
+    YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING.
+    THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART
     OF THIS AGREEMENT IS DEEMED INVALID BY LAW THE REST OF THE AGREEMENT WILL STILL BE BINDING.
     -->
 
@@ -61,21 +62,22 @@
       <!-- Mint -->
       <section id="mint">
         <br>
-        <h2>By connecting to this site / submitting a transaction, you acknowledge and accept all risks, acknowledge the disclaimers and terms at the bottom of this page, and agree to hold Matto harmless.</h2>
-        <h5>Public Mint: .0420 Eth, 1 / txn, no limiter, live on Tuesday, May 31 at 4:44:44 pm EDT (20:44:44 UTC).</h5>
-        <h5>Airdropped mints: 333 | Available for public mint: 4,111 | 50% Mint proceeds to charity</h5>
-        <p>Mints are first come - first served, and once they're sold out, transactions will fail, costing gas. Most of you will already know this, but I want to say it anyway: if you're warned by MetaMask that your transaction might fail, or that MetaMask cannot estimate gas due to an error, consider that a warning that if you submit the transaction, it will fail and you will lose all the eth submitted for the gas fee. Only mint if you understand what you're doing. <a href="https://github.com/MonkMatto/BLONKS-CC0" target="_blank")>Sourcecode can be found here.</a></p>
+        <h3>Public Mint: <em>Slow</em> Dutch Auction, 0.0420 Eth -> 0.0000 Eth (1/txn, no limiter).</h3>
+        <h5>Airdropped mints pre-sale: 333 | Available for public mint: 4,111 | 50% Mint proceeds to charity</h5>
+        <p>Mints are first come - first served, and once they're sold out, transactions will fail, costing gas. <a href="https://github.com/MonkMatto/BLONKS-CC0" target="_blank")>Sourcecode can be found here.</a></p>
         <br>
+        <hr>
+        <p>By connecting to this site / submitting a transaction, you acknowledge and accept all risks, acknowledge the disclaimers and terms at the bottom of this page, and agree to hold Matto harmless.</p>
         <p><b>Status:</b> <span class="message" color="black">Please connect to MetaMask.</span></p>
         <form>
           <div class="grid">
-            <button type="button" onclick="ConnectWallet()">I Agree to Terms (Connect MetaMask)</button>
+            <button type="button" onclick="ConnectWallet()">Connect MetaMask</button>
             <button type="button" onclick="mintBLONKbutton()">Mint a BLONK!</button>
           </div>
         </form>
         <hr>
       </section>
-      
+
       <!-- Preview -->
       <section id="preview">
         <h2>SVG Retrieval: Current and Preview</h2>
@@ -89,7 +91,7 @@
                   <input type="string" id="address" placeholder="Address (Optional)">
                   <button type="submit" id="submit_button" class="btn btn-outline-dark btn-lg btn-round"
                     onclick="previewButton(); return false">Retrieve SVG</button>
-                </div>  
+                </div>
             </form>
             <div id="svgPlaceholder" style="text-align:center;"></div>
           </div>
@@ -103,44 +105,49 @@
         <h3>What are BLONKS?</h3>
         <p>BLONKS is a collection of 4,444 completely on-chain vector-graphic illustrations with personality and with unique design mechanics. BLONKS token images change when transferred between wallets, they're licensed CC0, and they live on Ethereum.</p>
         <h3>When, where, why, who, and how much?</h3>
-        <p>The smart contracts that control BLONKS were deployed on Ethereum at the end of May, 2022 by <a href="https://twitter.com/MonkMatto" target="_blank">Matto</a>, an artist and creative-coder. Initially started as a way to help reacquaint himself with Solidity after not using it for a few years, BLONKS quickly blossomed into a colorful life of its own. After airdrops to some prior collectors, friends, and family, 4,111 BLONKS will be available publicly at a mint price of 0.0420 Eth on May 31 (a Tuesday) at 4:44:44 pm EDT (20:44:44 UTC).</p>
+        <p>The smart contracts that control BLONKS were deployed on Ethereum by <a href="https://twitter.com/MonkMatto" target="_blank">Matto</a>, an artist and creative-coder. Initially started as a way to help reacquaint himself with Solidity after not using it for a few years, BLONKS quickly blossomed into a colorful life of its own. After airdrops to some prior collectors, friends, and family, 4,111 BLONKS were available publicly to mint on May 31, 2022 at 4:44:44 pm EDT.</p>
         <h3>What's so special about BLONKS?</h3>
         <ol>
-          <li>They're <strong>100% on-chain with no external dependencies.</strong> Image, metadata, and preview functions are all on-chain and rendered live in any web-browser - no javascript or external libraries required.</li>
-          <li>The <strong>SVG vector-graphic illustrations are generative</strong> (not procedural), meaning that they're not built by merely assembling predefined layers. This generative quality adds incredible variability into the BLONKS collection and significant personality to each NFT.</li>
+          <li>They're <strong>100% on-chain with no external dependencies.</strong> Image, metadata, and preview functions are all on-chain and rendered live in any web-browser - no Javascript or external libraries required.</li>
+          <li>The <strong>SVG vector-graphic illustrations are generative</strong> (not procedural), meaning that they're not built by merely assembling predefined layers. For example, all glasses are generated to fit the BLONKS' faces; BLONKS whose heads, noses, eyes, and ears can all be different sizes and positions depending on the address that owns them. This generative quality adds incredible variability into the BLONKS collection and significant personality to each NFT.</li>
           <li>The base image's design is based on the owner's wallet address, so <strong>BLONKS change whenever they're bought/sold/transferred</strong> between wallets. This means that any BLONK - and the collection of BLONKS - can change and evolve.</li>
           <li><strong>BLONKS are family friendly.</strong> They're colorful and fun, they don't show tobacco products/weed or alcohol, and they'd be rated G by any NFT rating system.</li>
-          <li><strong>BLONKS NFTs are <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">Licensed CC0</a></strong> to encourage creative use, they have low secondary creator fees of 3%, and half of the proceeds generated at mint are transparently donated to charity.</li>
+          <li><strong>BLONKS NFTs are <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">Licensed CC0</a></strong> to encourage creative use, half of the proceeds generated at mint are transparently donated to charity, and they have low secondary creator fees of 3%.</li>
         </ol>
-        <h1>Now let's get into more details.</h1>
-        <p>BLONKS are 100% on-chain, generative vector-graphic illustrations with no external dependencies. The BLONKS CC0 project is coded in the language of the Ethereum blockchain itself (solidity) and its contracts generate all token data (SVG images and metadata) entirely from data on the blockchain. There is no web-app; there are no hosted files to maintain, update, or accidentally lose. The NFTs will exist as long as the Ethereum network exists, and we all kinda think that's a really really long time.</p>
-        <p>The project is as pure as what solidity was designed for - financial contracts - yet the resulting BLONKS NFTs are full of life and personality. Other on-chain SVG illustration projects typically utilize either run-line-encoding (pixellated-looking images) or are completely built by combining pre-made assets (head <em>a</em>, with nose <em>b</em>, eyes <em>c</em>, ears <em>d</em>, mouth <em>e</em>, etc.), but BLONKS are different. Entropy (AKA randomness) is taken from the owner's address, details regarding the block that the BLONK was minted in, and from an on-chain psuedo-random hash. From these inputs, over a hundred different generative values are calculated and passed between the various BLONKS smart contracts (a feat in itself). Each component contract pushes the limits of what Ethereum and Solidity can handle, and when working together, the combination of contracts become the BLONKS 'back-end.'</p>
-        <p>The images created are infinitely-scalable, vector-graphic SVGs. The SVG Retrieval tool above simply retrieves and displays the SVG data that is rendered on the blockchain. Anyone can get the SVG manually by using the 'getSVG' function from the smart contract (function #17 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan). An internet search for 'SVG Code Viewer' will return free browser-based apps to view the SVG code (like <a href="https://jsfiddle.net/mpkh05yt/13/" target="_blank">this one</a> Matto "made" on a code-sharing site), or you paste the code into a text editor, save it with the extension '.svg', and then open the file in a web browser. The 'previewSVG' function on the smart contract works in a similar way (function #25 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), but it allows the input of a custom address to show what the NFT would look like if owned by that address.</p>
-        <p>The address that owns a BLONKS NFT determines the base-image of the BLONK, which includes the starting color palette. There are 5,832,000 possible <em>starting</em> color palettes, and as each SVG is generated, entropy from the owner's address is used to determine how the color components change. There are over 1.6 Nonillion (10^30) different color combinations possible in the base-image of every BLONK, which is more of a fun fact than a useful bit of information. Also, the owner address is used as entropy to determine the shape and positions of different BLONK facial features, like eyes, eyebrows, nose, mole, head height and width, etc. Simply put, BLONKS are super colorful and have an incomprehensible variability even without their token-assigned and locked 'attributes.'</p>
-        <p>A BLONK's attributes (ex. hair, headband, teeth, etc), are determined by the psuedo-random hash assigned to the NFT at mint. These attributes <strong>do not change</strong> when the NFT is bought/sold/transferred. These are where 'rarity' comes in, but note these calculations do not consider any aspects or details of the base-image, which changes every transfer. These attributes are applied over the top of the base-image, sometimes continuing the color changes from the BLONK (hair/beard color), and sometimes using pre-determined colors (ex. eyewear). Because BLONKS NFTs have different size heads and necks, some attributes scale with the BLONK to achieve a 'custom fit'. The grandest example of this is with the eyewear; BLONKS have differently sized and positioned eyes, noses, and ears, so every set of eyewear is custom crafted by the code to fit the BLONK.</p>
-        <p>The code that creates BLONKS is impressive, and I hope that a BLONK NFT's unique look is appreciated. There are 4,444 BLONKS, a number Matto chose based on some simple criteria. First, it had to be in the thousands to support a community. Even if every collector owned 4, there would be over 1000 separate holders. Second, because the collection is extremely variable in visual aspects and can continually change, fewer BLONKS would create a collection that was less overwhelming to browse. Third, because BLONKS are all made of the same type of SVG shape (&lt;rect/&gt;'s), an edition size that consisted of the same digit was desired (1111, 2222, 3333, 4444, 5555, etc). Finally, because BLONKS are all made of rectangles (4-sided shapes), 4444 was chosen.</p>
-        <p>The 'meme' price of 0.0420 Eth was selected for memorability, humor, and affordability. 50% of the mint-proceeds are being transparently donated to charity through an <a href="https://app.endaoment.org/funds/892d256f-b550-4234-8439-f3441e83b1b4" target="_blank">Endaoment Donor Advised Fund</a> (a fund simply named "MonkMatto" and advised by - you guessed it - Matto). These kinds of Endaoment funds allow individuals and groups to donate to multiple organizations, and thanks to the blockchain, everything is transparent. Matto has decided to donate to 4 charities:</p>
-        <ul>
-          <li>40% of donations will be sent to <a href="https://www.worldwildlife.org/" target="_blank">World Wildlife Fund</a>. "As the world's leading conservation organization, WWF works in nearly 100 countries to tackle the most pressing issues at the intersection of nature, people, and climate. We collaborate with local communities to conserve the natural resources we all depend on and build a future in which people and nature thrive."</li>
-          <li>30% of donations will be sent to <a href = "https://outrightinternational.org/" target="_blank">OutRight Action International</a>. "OutRight is the only global LGBTIQ organization with consultative status and a permanent presence at the United Nations Headquarters, where we advocate for human rights and equality for LGBTIQ people, serve as secretariat of the <a href="https://unlgbticoregroup.org/" target="_blank">UN LGBTI Core Group</a> and act as a watchdog on all 193 world governments."</li>
-          <li>20% of donations will be sent to <a href="https://foodbankcenc.org/" target="_blank">Food Bank Of Central & Eastern North Carolina</a>. "Established in 1980, the food bank is a nonprofit organization that has provided food for people at risk of hunger in 34 counties for over 37 years. The food bank serves a network of more than 800 partner agencies such as soup kitchens, food pantries, shelters, and programs for children and adults…"</li>
-          <li>10% of donations will be sent to <a href="https://durhamarts.org/" target="_blank">Durham Arts Council</a>. "Durham Arts Council is a catalyst in the cultural development of Durham - it leads, inspires, and promotes excellence in and access to the creation, experience and active support of the arts for all the people of our community."</li>
-        </ul>
+      </section>
+
+      <section id="accordions">
         <br>
-        <hr>        
+        <details>
+          <summary><h3>MORE DETAIL (click to expand).</h3></summary>
+          <p>BLONKS are 100% on-chain, generative vector-graphic illustrations with no external dependencies. The BLONKS CC0 project is coded in the language of the Ethereum blockchain itself (solidity) and its contracts generate all token data (SVG images and metadata) entirely from data on the blockchain. There is no web-app; there are no hosted files to maintain, update, or accidentally lose. The NFTs will exist as long as the Ethereum network exists, and we all kinda think that's a really really long time.</p>
+          <p>The project is as pure as what solidity was designed for - financial contracts - yet the resulting BLONKS NFTs are full of life and personality. Other on-chain SVG illustration projects typically utilize either run-line-encoding (pixelated-looking images) or are completely built by combining pre-made assets (head <em>a</em>, with nose <em>b</em>, eyes <em>c</em>, ears <em>d</em>, mouth <em>e</em>, etc.), but BLONKS are different. Entropy (AKA randomness) is taken from the owner's address, details regarding the block that the BLONK was minted in, and from an on-chain pseudo-random hash. From these inputs, over a hundred different generative values are calculated and passed between the various BLONKS smart contracts (a feat in itself). Each component contract pushes the limits of what Ethereum and Solidity can handle, and when working together, the combination of contracts become the BLONKS 'back-end.'</p>
+          <p>The images created are infinitely-scalable, vector-graphic SVGs. The SVG Retrieval tool above simply retrieves and displays the SVG data that is rendered on the blockchain. Anyone can get the SVG manually by using the 'getSVG' function from the smart contract (function #17 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan). An internet search for 'SVG Code Viewer' will return free browser-based apps to view the SVG code (like <a href="https://jsfiddle.net/mpkh05yt/13/" target="_blank">this one</a> Matto "made" on a code-sharing site), or you paste the code into a text editor, save it with the extension '.svg', and then open the file in a web browser. The 'previewSVG' function on the smart contract works in a similar way (function #25 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), but it allows the input of a custom address to show what the NFT would look like if owned by that address.</p>
+          <p>The address that owns a BLONKS NFT determines the base-image of the BLONK, which includes the starting color palette. There are 5,832,000 possible <em>starting</em> color palettes, and as each SVG is generated, entropy from the owner's address is used to determine how the color components change. There are over 1.6 Nonillion (10^30) different color combinations possible in the base-image of every BLONK, which is more of a fun fact than a useful bit of information. Also, the owner address is used as entropy to determine the shape and positions of different BLONK facial features, like eyes, eyebrows, nose, mole, head height and width, etc. Simply put, BLONKS are super colorful and have an incomprehensible variability even without their token-assigned and locked 'attributes.'</p>
+          <p>A BLONK's attributes (ex. hair, headband, teeth, etc), are determined by the pseudo-random hash assigned to the NFT at mint. These attributes <strong>do not change</strong> when the NFT is bought/sold/transferred. These are where 'rarity' comes in, but note these calculations do not consider any aspects or details of the base-image, which changes every transfer. These attributes are applied over the top of the base-image, sometimes continuing the color changes from the BLONK (hair/beard color), and sometimes using pre-determined colors (ex. eyewear). Because BLONKS NFTs have different size heads and necks, some attributes scale with the BLONK to achieve a 'custom fit'. The grandest example of this is with the eyewear; BLONKS have differently sized and positioned heads, eyes, noses, and ears, so every set of eyewear is custom crafted by the code to fit the BLONK.</p>
+          <p>The code that creates BLONKS is impressive, and I hope that a BLONK NFT's unique look is appreciated. There are 4,444 BLONKS, a number Matto chose based on some simple criteria. First, it had to be in the thousands to support a community. Even if every collector owned 4, there would be over 1000 separate holders. Second, because the collection is extremely variable in visual aspects and can continually change, fewer BLONKS would create a collection that was less overwhelming to browse. Third, because BLONKS are all made of the same type of SVG shape (&lt;rect/&gt;'s), an edition size that consisted of the same digit was desired (1111, 2222, 3333, 4444, 5555, etc). Finally, because BLONKS are all made of rectangles (4-sided shapes), 4444 was chosen.</p>
+          <p>The 'meme' starting price of 0.0420 Eth was selected for memorability, humor, and affordability. 50% of the mint-proceeds are being transparently donated to charity through an <a href="https://app.endaoment.org/funds/892d256f-b550-4234-8439-f3441e83b1b4" target="_blank">Endaoment Donor Advised Fund</a> (a fund simply named "MonkMatto" and advised by - you guessed it - Matto). These kinds of Endaoment funds allow individuals and groups to donate to multiple organizations, and thanks to the blockchain, everything is transparent. Matto has decided to donate to 4 charities:</p>
+          <ul>
+            <li>40% of donations will be sent to <a href="https://www.nature.org/" target="_blank">The Nature Conservancy</a>. "The mission of The Nature Conservancy is to conserve the lands and waters on which all life depends. Our vision is a world where the diversity of life thrives, and people act to conserve nature for its own sake and its ability to fulfill our needs and enrich our lives."</li>
+            <li>30% of donations will be sent to <a href = "https://outrightinternational.org/" target="_blank">OutRight Action International</a>. "OutRight is the only global LGBTIQ organization with consultative status and a permanent presence at the United Nations Headquarters, where we advocate for human rights and equality for LGBTIQ people, serve as secretariat of the <a href="https://unlgbticoregroup.org/" target="_blank">UN LGBTI Core Group</a> and act as a watchdog on all 193 world governments."</li>
+            <li>20% of donations will be sent to <a href="https://foodbankcenc.org/" target="_blank">Food Bank Of Central & Eastern North Carolina</a>. "Established in 1980, the food bank is a nonprofit organization that has provided food for people at risk of hunger in 34 counties for over 37 years. The food bank serves a network of more than 800 partner agencies such as soup kitchens, food pantries, shelters, and programs for children and adults…"</li>
+            <li>10% of donations will be sent to <a href="https://durhamarts.org/" target="_blank">Durham Arts Council</a>. "Durham Arts Council is a catalyst in the cultural development of Durham - it leads, inspires, and promotes excellence in and access to the creation, experience and active support of the arts for all the people of our community."</li>
+          </ul>
+        </details>
       </section>
 
       <!-- faq -->
       <section id="faq">
         <h1>FAQ</h1>
-        <p><strong>Who got the airdrop?</strong></p>
-        <p>The first 182 BLONKS were airdropped to the first 182 <a href="https://www.artblocks.io/project/181" target="_blank">FOCUS</a> collectors. 22 BLONKS were minted to an account <a href="https://looksrare.org/accounts/0x7d096CF619B36178b6121d22D50f7879e90dEA66" target="_blank">Matto controls</a>, to be used for future giveaways, rewards, etc, but none will be used to sell for profit. About 100 were airdropped to Matto's irl fam, irl freinds, and internet frens. ~20 were airdropped via a casual giveaway in the Art Blocks discord, and a final 10 via a giveway in Grailers discord. In total, 333 were airdropped, leaving 4,111 of the 4,444 BLONKS available for public mint.</p>
+        <p><strong>Who got the pre-sale airdrop?</strong></p>
+        <p>The first 182 BLONKS were airdropped to the first 182 <a href="https://www.artblocks.io/project/181" target="_blank">FOCUS</a> collectors. 22 BLONKS were minted to an account <a href="https://looksrare.org/accounts/0x7d096CF619B36178b6121d22D50f7879e90dEA66" target="_blank">Matto controls</a>, to be used for future giveaways, rewards, etc, but none will be used to sell for profit. About 100 were airdropped to Matto's irl fam, irl friends, and internet frens. ~20 were airdropped via a casual giveaway in the Art Blocks discord, and a final 10 via a giveaway in Grailers discord. In total, 333 were airdropped, leaving 4,111 of the 4,444 BLONKS available for public mint.</p>
+        <p>After public sale opened, Matto minted/is minting additional BLONKS to anyone he feels is worthy of a free BLONKS, but never to any influencers for the sake of their influence (which would be lame and very unBLONKS like).</p>
         <br>
         <p><strong>Roadmap?</strong></p>
-        <p>The motivation of this project is to create something without any dependencies, and a roadmap is a selling point imo (Matto's), which in effect would imply a sort of abstract dependency - something the project is relying on to somehow promote itself. So, to answer that question: nope.</p>
+        <p>The motivation of this project is to create something without any dependencies, and a roadmap is a selling point, which in effect would imply a sort of abstract dependency - something the project is relying on to somehow promote itself. So, to answer that question: nope.</p>
         <br>
         <p><strong><del>&nbsp;Roadmap? </del> &nbsp;Matto's future role?</strong></p>
-        <p>Main builder for BLONKS stuff, for fun and joy, to share with the world. <em>I likes the BLONKS, so probably going to keep having a blast with them! -Matto</em></p>
+        <p>Main builder for BLONKS stuff, for fun and joy, to share with the world. <em>I likes the BLONKS, so probably going to keep having a blast with them!</em></p>
         <br>
         <p><strong>Is this a good investment? Will it make me money?</strong></p>
         <p>Read the disclaimers / terms below.</p>
@@ -155,12 +162,13 @@
         <ul>
           <li><a href="https://github.com/Brechtpd/base64/blob/main/base64.sol" target="_blank">Brecht Devos published code</a> for encoding in base64, which is needed for on-chain and in-browser rendering svgs.</li>
           <li><a href="https://mobile.twitter.com/ceruleanjulien" target="_blank">Julien</a> helped me get up to speed with testing in Hardhat, and was a great troubleshooting and brainstorm fren! 🙏</li>
-          <li><a href="https://twitter.com/ShaikTibout" target="_blank">Tib</a> and an a friendly anon both took peeks at various contract-control functions, helping me feel more confident.</li>
-          <li><a href="https://twitter.com/sterlingcrispin" target="_blank">Sterling Cripsin</a> gave me a leg up with web3 integration - all the published tutorials out there are uneccessarily complex!</li>
+          <li><a href="https://twitter.com/ShaikTibout" target="_blank">Tib</a> and <a href="https://twitter.com/outer_pockets" target="_blank">outerpockets</a> both took peeks at various contract-control functions, helping me feel more confident.</li>
+          <li><a href="https://twitter.com/sterlingcrispin" target="_blank">Sterling Cripsin</a> gave me a leg up with web3 integration - all the published tutorials out there are unnecessarily complex!</li>
           <li><a href="https://javascript.plainenglish.io/how-to-convert-an-svg-to-an-image-in-the-browser-eec3d6298c07" target="_blank">John Au-Yeung's post</a> on converting an SVG to an image in the browser allowed me to add that function as an option to my url-parameter render tool.</li>
+          <li><a href="https://twitter.com/NCNFTs" target="_blank">Immutable Computer</a> helped me get a sales-tweet bot set up and running off a raspberry pi using python! (so much fun!)</li>
           <li>(more coming soon)</li>
           <!--  <li><a href="https://twitter.com/1SinguRarity" target="_blank">@SinguRarity</a> hooked me up with some python, + <a href="https://medium.com/tech-insights/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-a82de2d3ed40" target="_blank">Joseph Adediji's post</a> on deploying python script to heroku, + a variation of the svg->png code, I was able to get a tweet bot set up that tweet the newly updated BLONKS images before OS even updates their cached images.</li> -->
-        </ul> 
+        </ul>
         <p>And guess who helped me with the amazingly robust backed for BLONKS? The one and only, ETHEREUM blockchain. Thanks for all the hard work!</p>
         <p>That's mostly it on the technical side, for now, but there's plenty more that can be built and there'll be many others who will help make BLONKS the amazing project it's destined to be. I'll try to keep this updated, but here's a pre-emptive THANKS! to future contributors.</p>
       </section>
