@@ -31,7 +31,7 @@ function getBLONKScontract() {
 
 async function _mintBLONK() {
     console.log("mintBLONK button");
-    var mintPrice = web3.utils.toWei(String('0.042'), 'ether');
+    var mintPrice = web3.utils.toWei(String('0.038'), 'ether');
     try {
         console.log("mintBLONK attempt");
         BLONKScontract.methods.publicMintThatBlonk().send({
