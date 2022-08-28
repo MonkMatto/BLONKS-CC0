@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BLONKS CC0</title>
     <meta name="description" content="BLONKS CC0 Website.">
@@ -13,26 +13,23 @@
     <script src="src/js/web3.min.js"></script>
     <script src="src/js/detect-provider.min.js"></script>
     <script src="src/js/web3handshake.js"></script>
-    <script src="src/js/MAIN_BLONKSmainABI.js"></script>
-    <script src="src/js/ROPS_BLONKSmainABI.js"></script>
-    <script src="src/js/RINK_BLONKSmainABI.js"></script>
-    <script src="src/js/mintBLONK.js"></script>
+    <script src="src/js/MAIN_BLONKSmainABI.js"></script> 
     <script src="src/js/preview.js"></script>
     <!--
     Website by Matto
     Matto.xyz
     @MonkMatto
     (C) Matto 2022
-
-    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+    
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
     IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-    NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS.
-    YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING.
-    THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART
+    NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS. 
+    YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING. 
+    THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART 
     OF THIS AGREEMENT IS DEEMED INVALID BY LAW THE REST OF THE AGREEMENT WILL STILL BE BINDING.
     -->
 
@@ -45,12 +42,12 @@
       <hgroup>
         <h1>BLONKS CC0</h1>
         <h3>4,444 weird, 100% on-chain generative vector-graphic illustrations.</h3>
-        <p>LINKS: <a href="https://opensea.io/collection/blonks" target="_blank">OpenSea</a> | <a href="https://looksrare.org/collections/0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f" target="_blank">LooksRare</a> | <a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#code" target="_blank">Etherscan</a> | <a href="https://twitter.com/blonksCC0" target="_blank">Twitter</a></p>
+        <p>LINKS: <a href="https://opensea.io/collection/blonks" target="_blank">OpenSea</a> | <a href="https://looksrare.org/collections/0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f" target="_blank">LooksRare</a> | <a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#code" target="_blank">Etherscan</a> | <a href="https://twitter.com/blonksCC0" target="_blank">Twitter</a> | <a href="https://github.com/MonkMatto/BLONKS-CC0" target="_blank">GitHub</a></p>
         <hr>
       </hgroup>
-    </header>
+    </header><!-- ./ Header -->
 
-    <!-- Main / Image -->
+    <!-- Main -->
     <main class="container">
       <section id="blonkimage">
         <figure>
@@ -59,60 +56,44 @@
         </figure>
       </section>
 
-      <!-- Mint -->
-      <section id="mint">
-        <br>
-        <h3>Public Mint: <em>Slow</em> Dutch Auction, 0.0420 Eth -> 0.0000 Eth (1/txn, no limiter).</h3>
-        <h5>Airdropped mints pre-sale: 333 | Available for public mint: 4,111 | 50% Mint proceeds to charity</h5>
-        <p>Mints are first come - first served, and once they're sold out, transactions will fail, costing gas. <a href="https://github.com/MonkMatto/BLONKS-CC0" target="_blank")>Sourcecode can be found here.</a></p>
-        <br>
-        <hr>
-        <p>By connecting to this site / submitting a transaction, you acknowledge and accept all risks, acknowledge the disclaimers and terms at the bottom of this page, and agree to hold Matto harmless.</p>
-        <p><b>Status:</b> <span class="message" color="black">Please connect to MetaMask.</span></p>
-        <form>
-          <div class="grid">
-            <button type="button" onclick="ConnectWallet()">Connect MetaMask</button>
-            <button type="button" onclick="mintBLONKbutton()">Mint a BLONK!</button>
-          </div>
-        </form>
-        <hr>
-      </section>
-
       <!-- Preview -->
       <section id="preview">
         <h2>SVG Retrieval: Current and Preview</h2>
-        <h5>To retrieve a BLONKS SVG from the Ethereum blockchain, you must first connect to MetaMask (button above), then enter a valid Token ID in the form below.</h5>
-        <p>OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</p>
+        <h5>To retrieve a BLONKS SVG from the Ethereum blockchain, you must first connect to MetaMask, then enter a valid Token ID in the form below. OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</h5>
+        <p>Note: this <strong>does not</strong> generate a transaction.</p>
+          
           <div id="tokenPreviewer" class="align-items-center">
+            <div id="svgPlaceholder" style="text-align:center;"></div>
             <br>
+            <p><b>Web3 Status:</b> <span class="message" color="black">Please connect to MetaMask.</span></p>
             <form _lpchecked="1">
                 <div class="grid">
+                  <button type="button" onclick="ConnectWallet()">Connect MetaMask</button>
                   <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required>
                   <input type="string" id="address" placeholder="Address (Optional)">
                   <button type="submit" id="submit_button" class="btn btn-outline-dark btn-lg btn-round"
                     onclick="previewButton(); return false">Retrieve SVG</button>
-                </div>
+                </div>  
             </form>
-            <div id="svgPlaceholder" style="text-align:center;"></div>
           </div>
           <br>
         <hr>
       </section>
 
-      <!-- TLDR -->
       <section id="tldr">
         <h1>ALL ABOUT BLONKS... Let's do the tl;dr's first.</h1>
         <h3>What are BLONKS?</h3>
-        <p>BLONKS is a collection of 4,444 completely on-chain vector-graphic illustrations with personality and with unique design mechanics. BLONKS token images change when transferred between wallets, they're licensed CC0, and they live on Ethereum.</p>
+        <p>BLONKS is a collection of 4,444 completely on-chain vector-graphic illustrations with personality and with unique design mechanics. BLONKS token images change their 'base' when transferred between wallets, they're licensed CC0, and they live on Ethereum.</p>
         <h3>When, where, why, who, and how much?</h3>
-        <p>The smart contracts that control BLONKS were deployed on Ethereum by <a href="https://twitter.com/MonkMatto" target="_blank">Matto</a>, an artist and creative-coder. Initially started as a way to help reacquaint himself with Solidity after not using it for a few years, BLONKS quickly blossomed into a colorful life of its own. After airdrops to some prior collectors, friends, and family, 4,111 BLONKS were available publicly to mint on May 31, 2022 at 4:44:44 pm EDT.</p>
+        <p>The smart contracts that control BLONKS were deployed on Ethereum at the end of May, 2022 by <a href="https://twitter.com/MonkMatto" target="_blank">Matto</a>, an artist and creative-coder. Initially started as a way to help reacquaint himself with Solidity after not using it for a few years, BLONKS quickly blossomed into a colorful life of its own. After airdrops to some prior collectors, friends, and family, 4,111 BLONKS were available publicly at a mint price of 0.0420 Eth on May 31 (a Tuesday) at 4:44:44 pm EDT (20:44:44 UTC).</p>
+        <p>On the 88th day after launch (August 26th, 2022), 692 tokens had been minted. Matto changed the price to 0, and within 15 minutes, the remaining 3752 tokens were minted.</p>
         <h3>What's so special about BLONKS?</h3>
         <ol>
-          <li>They're <strong>100% on-chain with no external dependencies.</strong> Image, metadata, and preview functions are all on-chain and rendered live in any web-browser - no Javascript or external libraries required.</li>
-          <li>The <strong>SVG vector-graphic illustrations are generative</strong> (not procedural), meaning that they're not built by merely assembling predefined layers. For example, all glasses are generated to fit the BLONKS' faces; BLONKS whose heads, noses, eyes, and ears can all be different sizes and positions depending on the address that owns them. This generative quality adds incredible variability into the BLONKS collection and significant personality to each NFT.</li>
-          <li>The base image's design is based on the owner's wallet address, so <strong>BLONKS change whenever they're bought/sold/transferred</strong> between wallets. This means that any BLONK - and the collection of BLONKS - can change and evolve.</li>
-          <li><strong>BLONKS are family friendly.</strong> They're colorful and fun, they don't show tobacco products/weed or alcohol, and they'd be rated G by any NFT rating system.</li>
-          <li><strong>BLONKS NFTs are <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">Licensed CC0</a></strong> to encourage creative use, half of the proceeds generated at mint are transparently donated to charity, and they have low secondary creator fees of 3%.</li>
+          <li>They're <strong>100% on-chain with no external dependencies.</strong> Image, metadata, and preview functions are all on-chain and rendered live in any web-browser - no javascript or external libraries required.</li>
+          <li>The <strong>SVG vector-graphic illustrations are generative</strong> (not procedural), meaning that they're not built by merely assembling predefined layers. This generative quality adds incredible variability into the BLONKS collection and significant personality to each NFT.</li>
+          <li>The base image's design is based on the owner's wallet address, so <strong>BLONKS change whenever they're bought/sold/transferred</strong> between wallets. This means that any BLONK - and the collection of BLONKS - can change and evolve. Note that 'traits' (like hair, glasses, beard, earrings, etc) never change.</li>
+          <li><strong>BLONKS are family friendly.</strong> They're colorful and fun, they don't show tobacco products/weed or alcohol, and they'd be rated G (or E for Everyone) by any NFT rating system that may someday exist.</li>
+          <li><strong>BLONKS NFTs are <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">Licensed CC0</a></strong> to encourage creative use, they have low secondary creator fees of 3%, and half of the proceeds generated at mint were transparently donated to charity.</li>
         </ol>
       </section>
 

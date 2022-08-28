@@ -1,6 +1,7 @@
 var tok_Id, addy, svg, error, previewMode, BLONKScontract;
 let numPat = /[0-9]/;
 let hexPat = /^0[xX]{1}[a-fA-F0-9]{40}$/;
+const MAIN_BLONKS_ADDRESS = "0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f"; // MAINNET
 
 function previewButton() {
   if (getBLONKScontract()) {
