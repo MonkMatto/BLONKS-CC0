@@ -6,21 +6,6 @@ let numPat = /[0-9]/;
 let hexPat = /^0[xX]{1}[a-fA-F0-9]{40}$/;
 BLONKScontract = new web3.eth.Contract(MAIN_BLONKS_ABI, MAIN_BLONKS_ADDRESS);
 
-// function getBLONKScontract() {
-//     if (currentAccount == null) {
-//         renderMessage('Please connect to MetaMask.');
-//         ConnectWallet();
-//         return false;
-//     } else {
-//         if (BLONKScontract == null) {
-//             BLONKScontract = new web3.eth.Contract(MAIN_BLONKS_ABI, MAIN_BLONKS_ADDRESS); // UPDATE TO CORRECT NETWORK: RINK / ROPS / MAIN
-//             return true;
-//         } else {
-//             return true;
-//         }
-//     }
-// }
-
 function previewPNG() {
   rawPng = "true";
   previewSVG()
@@ -92,7 +77,6 @@ async function previewSVG() {
       const pngImage = document.createElement('img');
       document.getElementById("svgPlaceholder").innerHTML = "";
       document.getElementById("svgPlaceholder").appendChild(pngImage);
-      //document.body.appendChild(pngImage);
       pngImage.src = imgData;
     });
     function svgToPng(svg, callback) {
