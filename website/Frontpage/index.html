@@ -11,8 +11,6 @@
     <link rel="manifest" href="media/icons/site.webmanifest">
     <link rel="stylesheet" href="src/css/pico.min.css">
     <script src="src/js/web3.min.js"></script>
-    <script src="src/js/detect-provider.min.js"></script>
-    <script src="src/js/web3handshake.js"></script>
     <script src="src/js/MAIN_BLONKSmainABI.js"></script> 
     <script src="src/js/preview.js"></script>
     <!--
@@ -59,25 +57,32 @@
       <!-- Preview -->
       <section id="preview">
         <h2>SVG Retrieval: Current and Preview</h2>
-        <h5>To retrieve a BLONKS SVG from the Ethereum blockchain, you must first connect to MetaMask, then enter a valid Token ID in the form below. OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</h5>
-        <p>Note: this <strong>does not</strong> generate a transaction.</p>
-          
-          <div id="tokenPreviewer" class="align-items-center">
-            <div id="svgPlaceholder" style="text-align:center;"></div>
-            <br>
-            <p><b>Web3 Status:</b> <span class="message" color="black">Please connect to MetaMask.</span></p>
-            <form _lpchecked="1">
-                <div class="grid">
-                  <button type="button" onclick="ConnectWallet()">Connect MetaMask</button>
-                  <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required>
-                  <input type="string" id="address" placeholder="Address (Optional)">
-                  <button type="submit" id="submit_button" class="btn btn-outline-dark btn-lg btn-round"
-                    onclick="previewButton(); return false">Retrieve SVG</button>
-                </div>  
-            </form>
-          </div>
+        <h5>Enter a valid Token ID in the form below to retrieve BLONKS data from the blockchain and display as SVG or PNG. OPTIONAL: to preview how a BLONK will look after transfer to a new address, also enter the new address.</h5>        
+        <div id="tokenPreviewer" class="align-items-center">
+          <div id="svgPlaceholder" style="text-align:center;"></div>
           <br>
+          <form _lpchecked="1">
+              <div class="grid">
+                <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required>
+                <input type="string" id="address" placeholder="Address (Optional)">               
+                <button type="submit" id="submit_button1" class="btn btn-outline-dark secondary btn-lg btn-round"
+                  onclick="previewSVG(); return false">SVG</button>
+                <button type="submit" id="submit_button2" class="btn btn-outline-dark contrast btn-lg btn-round"
+                  onclick="previewPNG(); return false">PNG</button>
+              </div>  
+          </form>
+        </div>
         <hr>
+        <br>
+        <details>
+          <summary><p>There's also a 'headless' renderer that pulls parameters from the URL (click to expand)</p></summary>
+          <ul>
+            <li>tokenID to render: <a href="https://render.blonks.xyz/?id=0" target="_blank">https://render.blonks.xyz/?id=0</a></li>
+            <li>...+ address to preview: <a href="https://render.blonks.xyz/?id=0&address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2" target="_blank">https://render.blonks.xyz/?id=0&address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2</a></li>
+            <li>...+ render as png: <a href="https://render.blonks.xyz/?id=0&address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2&png=true" target="_blank">https://render.blonks.xyz/?id=0&address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2&png=true</a></li>                      
+          </ul>
+        </details>
+        <br>
       </section>
 
       <section id="tldr">
