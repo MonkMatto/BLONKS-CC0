@@ -1,6 +1,6 @@
 const web3 = new Web3("https://eth-mainnet.alchemyapi.io/v2/ntDFj2vzjk0_DT1C2hmgzvbF9VMhzGW7"); //My API Key here is locked to contract and to calling website.
 const MAIN_BLONKS_ADDRESS = "0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f";
-var tok_Id, addy, svg, png, error, previewMode, BLONKScontract;
+var tok_Id, addy, size, svg, png, error, fixedSize, previewMode, BLONKScontract;
 let numPat = /[0-9]/;
 let hexPat = /^0[xX]{1}[a-fA-F0-9]{40}$/;
 BLONKScontract = new web3.eth.Contract(MAIN_BLONKS_ABI, MAIN_BLONKS_ADDRESS);
@@ -11,6 +11,7 @@ var url = new URL(url_string);
 var rawTokenId = url.searchParams.get("id");
 var rawAddress = url.searchParams.get("address");
 var rawPng = url.searchParams.get("png");
+var rawSize = url.searchParams.get("size");
 _preview()
 
 async function _preview() {
@@ -22,6 +23,11 @@ async function _preview() {
   } else {
       console.log("Token ID Not Accepted");
       error = true;
+  }
+  if (rawSize != null && rawSize.match(numPat) && rawSize >=10 && rawSize < 10000) {
+      size = rawSize;
+      console.log("Size Accepted: " + size);
+      fixedSize = true;
   }
   if (rawAddress != null) {
       if (rawAddress.match(hexPat)) {
@@ -65,6 +71,10 @@ async function _preview() {
   if (error) {
       svg = '<?xml version="1.0" encoding="utf-8"?><svg viewBox="0 0 1000 1000" width="1000" height="1000" xmlns="http://www.w3.org/2000/svg"></svg>';
       console.log("There was an error. Please check your URL query and try again.");
+  }
+  if (fixedSize) {
+    let index = svg.search("xmlns");
+    svg = "".concat(svg.slice(0, index), 'width="', size, '" ', 'height="', size, '" ', svg.slice(index));
   }
   if (rawPng == "true") {
     svgToPng(svg, (imgData) => {
