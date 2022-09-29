@@ -5,9 +5,10 @@ let numPat = /[0-9]/;
 let hexPat = /^0[xX]{1}[a-fA-F0-9]{40}$/;
 BLONKScontract = new web3.eth.Contract(MAIN_BLONKS_ABI, MAIN_BLONKS_ADDRESS);
 
-var url_string = "https://render.blonks.xyz/?id=0&png=true";
-//var url_string = window.location.href;
+// var url_string = "https://render.blonks.xyz/?id=0&png=true";
+var url_string = window.location.href;
 var url = new URL(url_string);
+console.log("The URL entered is: " + url);
 var rawTokenId = url.searchParams.get("id");
 var rawAddress = url.searchParams.get("address");
 var rawPng = url.searchParams.get("png");
@@ -24,11 +25,11 @@ async function _preview() {
       console.log("Token ID Not Accepted");
       error = true;
   }
-  if (rawSize != null && rawSize.match(numPat) && rawSize >=10 && rawSize < 10000) {
+  if (rawSize != null && rawSize.match(numPat) && rawSize >= 10 && rawSize < 10000) {
       size = rawSize;
       console.log("Size Accepted: " + size);
       fixedSize = true;
-  }
+  } 
   if (rawAddress != null) {
       if (rawAddress.match(hexPat)) {
           addy = rawAddress;
