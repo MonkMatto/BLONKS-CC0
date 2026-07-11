@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BLONKS CC0</title>
+    <meta name="description" content="BLONKS CC0 Website.">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/icons/favicon-16x16.png">
+    <link rel="manifest" href="media/icons/site.webmanifest">
+    <link rel="stylesheet" href="src/css/pico.min.css">
+    <script src="src/js/web3.min.js"></script>
+    <script src="src/js/MAIN_ABI.js"></script>
+    <script src="src/js/URI_ABI.js"></script>
+    <script src="src/js/detect-provider.min.js"></script>
+    <script src="src/js/handshake.js"></script>
+    <script src="src/js/interact.js"></script>
+
+    <!--
+    Website by Matto
+    Matto.xyz
+    @MonkMatto
+    (C) Matto 2024
+    
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+    IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS. 
+    YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING. 
+    THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART 
+    OF THIS AGREEMENT IS DEEMED INVALID BY LAW THE REST OF THE AGREEMENT WILL STILL BE BINDING.
+    -->
+
+
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="container">
+      <hgroup>
+        <h1>BLONKS CC0</h1>
+        <h3>4,444 weird, 100% EVM generated, dynamic, vector-graphic illustrations.</h3>
+        <p><a href="https://opensea.io/collection/blonks" target="_blank">Market</a> | <a href="https://v1.sudoswap.xyz/#/swap/0x8AD52E0bEAb08FaBA2c2935f67A7a245237dFA71" target="_blank">Sudoswap</a> | <a href="https://matto.xyz" target="_blank">Matto</a> | <a href="https://twitter.com/blonksCC0" target="_blank">Twitter</a> | <a href="https://discord.com/invite/AQDwjAa3g2" target="_blank">Discord</a> | <a href="https://github.com/MonkMatto/BLONKS-CC0" target="_blank">GitHub</a> | <a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#code" target="_blank">Token Contract</a> | <a href="https://etherscan.io/address/0x5bb2333ee8c9818d4bd898a17f597ec6f5710fd6#code" target="_blank">Shapeshifter Contract</a> | <a href="https://www.etherethos.com" target="_blank">EtherEthos</a></p>
+         <!-- | <a href="https://blonks.redbubble.com" target="_blank">Merch</a>    <a href="https://market.substratum.art/1/collections/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f" target="_blank">Community Market</a> | <a href="https://artacle.io/project/blonks" target="_blank">Artacle</a> | <a href="https://nfteye.io/collections/blonks" target="_blank">NFTEYE</a> | -->
+        <hr>
+      </hgroup>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+      <section id="blonkimage">
+        <figure>
+          <img src="media/BLONKS_5x3_v4.png" alt="3 rows of 5 BLONKS">
+          <figcaption>BLONKS, DarkBLONKS, PepeBLONKS, BLOOPS, AIG, SkullyBLONKS, Cycles, and CONTEXT!</figcaption>
+        </figure>
+      </section>
+      
+      <!-- Preview -->
+      <section id="preview">
+        <h5>BLONKS are dynamic artworks living and evolving entirely on the EVM. The PFP renderers are owner-aware and tokens using those states change a bit on transfer. Owners can shapeshift a token to use different algos, and BLONKS can be used as mini-profiles with their dynamic descriptions.</h5>
+        <br>
+        <p>Because BLONKS are so unique (dynamic SVGs and metadata generated with live data from 5+ smart contracts on the blockchain), most websites aren't designed to show their most up-to-date state. Please use the preview functions on this site (or directly from the smart contract) to see a BLONKS token's current, true form - or preview how it will look after a transfer or a shapeshift!</p>
+        <br>
+        <hr>
+        <h1>Preview any BLONKS!</h1>
+        <p>Enter a valid Token ID in the form below (0-4443) to retrieve the BLONKS artwork from the blockchain.</p>
+        <p>OPTIONAL: Enter the wallet address and/or shapeshifter-state to preview how the token would look under those conditions.</p>
+        <div id="tokenPreviewer" class="align-items-center">
+          <div id="svgPlaceholder" style="text-align:center;"></div>
+          <br>
+          <form _lpchecked="1">
+              <div class="grid">
+                <div class="grid">
+                  <input type="number" id="tokenId" placeholder="Token Id" min="0" max="4443" required="">
+                  <input type="string" id="address" placeholder="Address (Optional)">               
+                </div>
+                <div class="grid">
+                  <!-- <input type="number" id="shift-state" placeholder="Shifter-State (Optional)" min="0"> -->
+                  <select id="shift-state" name="shift-state">
+                    <option value="">Select a State</option>
+                    <option value="0">BLONKS</option>
+                    <option value="1">DarkBLONKS</option>
+                    <option value="2">PepeBLONKS</option>
+                    <option value="3">BLOOPS</option>
+                    <option value="4">AIG*</option>
+                    <option value="5">SkullyBLONKS</option>
+                    <option value="6">Cycles</option>
+                    <option value="7">CONTEXT</option>
+                  </select>
+                  <div class="grid">
+                  <button type="submit" id="submit_button1" class="btn btn-outline-dark secondary btn-lg btn-round" onclick="previewSVG(); return false">SVG</button>
+                  <button type="submit" id="submit_button2" class="btn btn-outline-dark contrast btn-lg btn-round" onclick="previewPNG(); return false">PNG</button>
+                  </div>
+                </div>
+              </div>  
+          </form>
+          <p><small class="text-muted"><em>*This renderer uses random recursion, and sometimes it will run out of gas during rendering. Shifting to this state may result in a token that doesn't render - even if it previews successfully. If this happens, shapeshift the token to another renderer.</em></small></p>
+        </div>
+        <br>
+        <details>
+          <summary><p><em>There's also a 'headless' renderer that can pull parameters from the URL (click to expand)</em></p></summary>
+          <ul>
+            <li>Visit <a href="https://render.blonks.xyz" target="_blank">https://render.blonks.xyz</a> to randomly generate a BLONKS</li>
+            <li>OR set a specific tokenID in the URL by adding '?id=<#>'. Eg, token 0: <a href="https://render.blonks.xyz/?id=0" target="_blank">https://render.blonks.xyz/?id=0</a></li>
+            <ul>
+            <li>Optional: add <a href="https://render.blonks.xyz/?id=0&amp;address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2" target="_blank">&amp;address=&lt;the address to preview&gt;</a> to the URL to preview an address.</li>
+            <li>Optional: add <a href="https://render.blonks.xyz/?id=0&amp;address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2&amp;png=true" target="_blank">&amp;png=true</a> to the URL to render the BLONKS as a png.</li>
+            <li>Optional: add <a href="https://render.blonks.xyz/?id=0&amp;address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2&amp;png=true&amp;shapeshift=3" target="_blank">&amp;shapeshift=&lt;the shifter-state&gt;</a> to the URL to render the BLONKS in a certain shapeshifter state.</li>                      
+            <li>Optional: add <a href="https://render.blonks.xyz/?id=0&amp;address=0x41b68202Dc64904E09D2E4F0A94879C741F27dB2&amp;png=true&amp;shapeshift=3&amp;size=512" target="_blank">&amp;size=&lt;dimension of a side&gt;</a> to the URL to render the BLONKS at a specific size.</li>
+            </ul>
+          </ul>
+        </details>
+      </section>
+
+      <!-- Shift -->
+      <section id="preview-renders">
+        <h1>Available Shapeshift States</h1>
+        <h5>There are 8 different shapeshifter states available, some with limited capacity and compatability.</h5>
+        <p>The images in the following section are generated entirely (and randomly) from the contract. These are just examples of possible outputs. The entropy changes every block, and most of the time, all renders are made in the same block, resulting in what are essentially 6 views of a potential token.</p>
+        <p><a href="#" onclick="event.preventDefault(); updateSampleSVGs();">Refresh Example Renders</a> (entropy changes every ~12 seconds)</p>
+        <div class="grid">
+          <div class="card">
+            <div id="BLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 0: BLONKS</h5>
+              <p class="card-text">The OG BLONKS. The OGBs!</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 4444.<br>Current Utilization: <span id="state-0-active"></span>/4444.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/blonks.html" >Learn more about this renderer.</a></small></p> -->
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <div id="DarkBLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 1: DarkBLONKS</h5>
+              <p class="card-text">BLONKS on a moonlit night.</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 444.<br>Current Utilization: <span id="state-1-active"></span>/444.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/darkblonks.html" >Learn more about this renderer.</a></small></p> -->
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <div id="PepeBLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 2: PepeBLONKS</h5>
+              <p class="card-text">Pepe'd and feelin' good.</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 222.<br>Current Utilization: <span id="state-2-active"></span>/222.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/pepeblonks.html" >Learn more about this renderer.</a></small></p> -->
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+            </div>
+          </div>
+          <!-- <div class="card">
+            <div id="BLOOP-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 3: BLOOPS</h5>
+              <p class="card-text">&lt;rect/&gt; no more!</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 1111.<br>Current Utilization: <span id="state-3-active"></span>/1111.</small></p>
+            </div>
+          </div> -->
+        </div>
+        <br><br>
+        <div class="grid">
+          <div class="card">
+            <div id="BLOOP-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 3: BLOOPS</h5>
+              <p class="card-text">&lt;rect/&gt; no more!</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 1111.<br>Current Utilization: <span id="state-3-active"></span>/1111.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/bloops.html" >Learn more about this renderer.</a></small></p> -->
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <div id="AIGBLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 4: AIG</h5>
+              <p class="card-text">Anni (Albers) Inspired Generator.</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 111.<br>Current Utilization: <span id="state-4-active"></span>/111.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/aig.html" >Learn more about this renderer.</a></small></p> -->
+               <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+              <p class="card-text"><small class="text-muted">Note: some BLONKS might run out of gas when using this renderer!</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <div id="SkullyBLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 5: SkullyBLONKS</h5>
+              <p class="card-text">...Ded</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 1031.<br>Current Utilization: <span id="state-5-active"></span>/1031.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/skullyblonks.html" >Learn more about this renderer.</a></small></p> -->
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div id="Cycles-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 6: Cycles</h5>
+              <p class="card-text">It keeps going, and going, and...</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 333.<br>Current Utilization: <span id="state-6-active"></span>/333.</small></p>
+              <p class="card-text"><small class="text-muted">(Notes Coming Coon)</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/cycles.html" >Learn more about this renderer.</a></small></p> -->
+            </div>
+          </div>
+          <div class="card">
+            <div id="CONTEXT-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 7: CONTEXT <small class="text-muted"><a href="https://blonks.xyz/notes/context.html" >(notes)</a></small></h5>
+              <p class="card-text">Claude Fable 5's Self Portrait.</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 512.<br>Current Utilization: <span id="state-7-active"></span>/512.</small></p>
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://blonks.xyz/notes/context.html" >Learn more about this renderer.</a></small></p> -->
+            </div>
+          </div>
+          <!-- <div class="card">
+            <div id="SkullyBLONK-live"></div>
+            <div class="card-body">
+              <br>
+              <h5 class="card-title">State 5: SkullyBLONKS</h5>
+              <p class="card-text">...Ded</p>
+              <p class="card-text"><small class="text-muted">Maximum Capacity: 1031.<br>Current Utilization: <span id="state-5-active"></span>/1031.</small></p>
+            </div>
+          </div> -->
+        </div>
+
+
+
+        <br>
+        <p><a href="#" onclick="event.preventDefault(); updateSampleSVGs();">Refresh Example Renders</a> (entropy changes every ~12 seconds)</p>
+        <hr>
+      </section>
+
+      <section id="shift"></section>
+        <h1>Shapeshift your BLONKS!</h1>
+        <details>
+          <summary><p><em>You can shapeshift your BLONKS token with the following form, but there are a few things to note (click to expand)</em></p></summary>
+          <ul>
+            <li>Shapeshifting is free, and can only be done on the official Shapeshifter-URI contract (set on the BLONKS token contract).</li>
+            <li>The first time a token shapeshifts, the gas required will be higher than later ones. Subsequent shapeshifts are ~50% the gas.</li>
+            <li>Newer renderers (like AIG) feature recursion, and this can cause out of gas errors for some tokens that causes them to not render. Preview shapeshifts (on the top of this page) before committing, but know that if a token render fails, you can always re-shift it.</li>
+            <li>Other than the base-state (OG BLONKS), all other states limit how many tokens can be utilizing them at any given time...</li>
+            <ul>
+              <li>If a shapeshift state is full when MetaMask generates the transaction, it will report an error.</li>
+              <li>However unlikely, it is possible that Metamask reports no errors, but a transaction with higher gas executes before yours and the shapeshifter state fills, resulting in your transaction failing and costing gas.</li>
+            </ul>
+            <li>When shifting out of a state, the slot the token was using becomes available to others.</li>
+            <li>The token being shapeshifted must be owned by the calling account OR by a vault that delegates to it via <a href="https://delegate.xyz/" target="_blank">delegate.xyz v1</a>.</li>
+          </ul>
+        </details>
+        <br>
+        <!-- <p><b>Status:</b> <span class="message" color="black">Please connect to MetaMask.</span></p> -->
+        <form>
+          <div class="grid">
+            <button type="button" onclick="connectWallet()"><span id="connect-button-text">Connect MetaMask</span></button>
+            <input type="number" id="shifting-tokenId" placeholder="Token Id" min="0" max="4443" required="">
+            <!-- <input type="number" id="shifting-state" placeholder="Shifter-State" min="4"> -->
+            <select id="shifting-state" name="shift-state">
+              <option value="">Select a State</option>
+              <option value="0">BLONKS</option>
+              <option value="1">DarkBLONKS</option>
+              <option value="2">PepeBLONKS</option>
+              <option value="3">BLOOPS</option>
+              <option value="4">AIG*</option>
+              <option value="5">SkullyBLONKS</option>
+              <option value="6">Cycles</option>
+              <option value="7">CONTEXT</option>
+            </select>
+            <button type="button" onclick="shapeshift()">Shift your BLONK!</button>
+          </div>
+        </form>
+        <p><small class="text-muted"><em>*This renderer uses random recursion, and sometimes it will run out of gas during rendering. Shifting to this state may result in a token that doesn't render - even if it previews successfully. If this happens, shapeshift the token to another renderer.</em></small></p>
+        <hr>
+      </section>
+      
+      <!-- EtherEthos -->
+      <section id="preview">
+        <br><br>
+        <h1>BLONKS 🤝 EtherEthos</h1>
+        <h5>BLONKS, an EVM powered framework, incorporates composable data from <a href="https://www.EtherEthos.com" target="_blank">EtherEthos</a>.</h5>
+        <p>EtherEthos is a free, decentralized, fully composable profile primitive (also created by Matto). It allows any Ethereum address to store and manage its own personalized data, and it allows both smart-contracts and web apps to incorporate this data into their applications.</p>
+        <p>BLONKS NFTs extend their identity as incredibly dynamic, experimental, and generative EVM artworks by incorporating this profile data from the EtherEthos smart contract. Any BLONKS owner that has a 'live' EtherEthos profile will see their data composed into the description fields of all of their BLONKS.</p>
+        <p>Explore EtherEthos and the system documentation through the following links.</p>
+        <br>
+        <div class="grid">
+          <a href="https://www.etherethos.com" target="_blank"><button type="submit" id="submit_button2" class="btn btn-outline-dark contrast btn-lg btn-round";>EtherEthos App</button></a>
+          <a href="https://docs.etherethos.com" target="_blank"><button type="submit" id="submit_button1" class="btn btn-outline-dark secondary btn-lg btn-round";>EtherEthos Docs</button></a>
+        </div>
+        <br>
+        <hr>
+      </section>
+
+      <!-- TLDR section -->
+      <section id="tldr">
+        <h1>ALL ABOUT BLONKS... Let's do the tl;dr's first.</h1>
+        <h3>What are BLONKS?</h3>
+        <p>BLONKS is a collection of 4,444 completely on-chain vector-graphic illustrations with personality and with unique technical and design mechanics. BLONKS token images change their 'base' when transferred between wallets, they can shapeshift to change how they look, they have dynamic descriptions, they're licensed CC0, and they live on Ethereum with no external dependencies.</p>  
+      </section>
+
+      <!-- Whats so Special -->
+      <section id="special">
+        <details>
+          <summary><h3>What's so special about BLONKS? (click to expand)</h3></summary>
+          <ol>
+            <li>They're <strong>100% on-chain with no external dependencies.</strong> Image, metadata, and preview functions are all on-chain and rendered live in any web-browser - no javascript or external libraries required.</li>
+            <li>The <strong>SVG vector-graphic illustrations are generative</strong> (not procedural), meaning that they're not built by merely assembling predefined layers. This generative quality adds incredible variability into the BLONKS collection and significant personality to each NFT.</li>
+            <li>The base image's design is based on the owner's wallet address, so <strong>BLONKS change whenever they're bought/sold/transferred</strong> between wallets. This means that any BLONK - and the collection of BLONKS - can change and evolve. Note that 'traits' (like hair, glasses, beard, earrings, etc) never change.</li>
+            <li><strong>BLONKS are dynamic and can shapeshift</strong> to new looks. Matto (the artist) can add new shapeshifter states at any time, increasing the options available to BLONKS.</li>
+            <li><strong>BLONKS are family friendly.</strong> They're colorful and fun, they don't show tobacco products/weed or alcohol, and they'd be rated G (or E for Everyone) by any NFT rating system that may someday exist.</li>
+            <li><strong>BLONKS images are <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">Licensed CC0</a></strong> to encourage creative use, they have low royalties of only 3%, and half of the proceeds generated at mint were transparently donated to charity ($11,697.29).</li>
+        </ol>
+        </details>
+      </section>
+
+      <!-- wwwwh -->
+      <section id="wwwwh">
+        <details>
+          <summary><h3>When, where, why, who, and how much? (click to expand)</h3></summary>      
+          <p>The smart contracts that control BLONKS were deployed on Ethereum at the end of May, 2022 by <a href="https://twitter.com/MonkMatto" target="_blank">Matto</a>, an artist and creative-coder. Initially started as a way to help reacquaint himself with Solidity after not using it for a few years, BLONKS quickly blossomed into a colorful life of its own. After 333 airdrops to some prior collectors, friends, and family, 4,111 BLONKS were available publicly at a mint price of 0.0420 Eth on May 31 (a Tuesday) at 4:44:44 pm EDT (20:44:44 UTC).</p>
+          <p>After primary sales slowed, Matto started a slow Dutch Auction down to 0.01 Eth with promises of the project eventually going free. As thanks for early collectors, Matto launched a new project 'Texture and Hues', and restricted claiming to only prior BLONKS owners.</p>
+          <p>On the 88th day after launching BLONKS (August 26th, 2022), 692 tokens had been minted. Matto changed the price to 0, and within 15 minutes, the remaining 3752 tokens were minted by thousands of unique wallets.</p>
+          <p>One year after the last BLONK was minted, the Shapeshifter upgrade went live! Three additional generative renderers were added to the project on launch, as well as dynamic token descriptions. The shapeshifter contract allows Matto to add new renderers at any time.</p>
+          <p>Two years after the first BLONK was minted, EtherEthos decentralized profiles were incorporated into BLONKS dynamic descriptions!</p>
+        </details>
+      </section>
+
+      <!-- More Detail -->
+      <section id="more-detail">
+        <details>
+          <summary><h3>More Information (click to expand)</h3></summary>
+          <p>BLONKS are 100% on-chain, generative vector-graphic illustrations with no external dependencies. The BLONKS CC0 project is coded in the language of the Ethereum blockchain itself (solidity) and its contracts generate all token data (SVG images and metadata) entirely from data on the blockchain. There is no web-app; there are no hosted files to maintain, update, or accidentally lose. The NFTs will exist as long as the Ethereum network exists, and we all kinda think that's a really really long time.</p>
+          <p>The project is as pure as what solidity was designed for - financial contracts - yet the resulting BLONKS NFTs are full of life and personality. Other on-chain SVG illustration projects typically utilize either run-line-encoding (pixelated-looking images) or are completely built by combining pre-made assets (head <em>a</em>, with nose <em>b</em>, eyes <em>c</em>, ears <em>d</em>, mouth <em>e</em>, etc.), but BLONKS are different. Entropy (AKA randomness) is taken from the owner's address, details regarding the block that the BLONK was minted in, and from an on-chain pseudo-random hash. From these inputs, over a hundred different generative values are calculated and passed between the various BLONKS smart contracts (a feat in itself). Each component contract pushes the limits of what Ethereum and Solidity can handle, and when working together, the combination of contracts become the BLONKS 'back-end.'</p>
+          <p>The images created are infinitely-scalable, vector-graphic SVGs. The SVG Retrieval tool above simply retrieves and displays the SVG data that is rendered on the blockchain. Anyone can get the SVG manually by using the 'getSVG' function from the smart contract (function #17 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan). An internet search for 'SVG Code Viewer' will return free browser-based apps to view the SVG code (like <a href="https://jsfiddle.net/mpkh05yt/13/" target="_blank">this one</a> Matto "made" on a code-sharing site), or you paste the code into a text editor, save it with the extension '.svg', and then open the file in a web browser. The 'previewSVG' function on the smart contract works in a similar way (function #25 in the '<a href="https://etherscan.io/address/0x7f463b874ec264dc7bd8c780f5790b4fc371f11f#readContract" target="_blank">Read Contract</a>' section on Etherscan), but it allows the input of a custom address to show what the NFT would look like if owned by that address.</p>
+          <p>The address that owns a BLONKS NFT determines the base-image of the BLONK, which includes the starting color palette. There are 5,832,000 possible <em>starting</em> color palettes, and as each SVG is generated, entropy from the owner's address is used to determine how the color components change. There are over 1.6 Nonillion (10^30) different color combinations possible in the base-image of every BLONK, which is more of a fun fact than a useful bit of information. Also, the owner address is used as entropy to determine the shape and positions of different BLONK facial features, like eyes, eyebrows, nose, mole, head height and width, etc. Simply put, BLONKS are super colorful and have an incomprehensible variability even without their token-assigned and locked 'attributes.'</p>
+          <p>A BLONK's attributes (ex. hair, headband, teeth, etc), are determined by the pseudo-random hash assigned to the NFT at mint. These attributes <strong>do not change</strong> when the NFT is bought/sold/transferred. These are where 'rarity' comes in, but note these calculations do not consider any aspects or details of the base-image, which changes every transfer. These attributes are applied over the top of the base-image, sometimes continuing the color changes from the BLONK (hair/beard color), and sometimes using pre-determined colors (ex. eyewear). Because BLONKS NFTs have different size heads and necks, some attributes scale with the BLONK to achieve a 'custom fit'. The grandest example of this is with the eyewear; BLONKS have differently sized and positioned heads, eyes, noses, and ears, so every set of eyewear is custom crafted by the code to fit the BLONK.</p>
+          <p>The code that creates BLONKS is impressive, and I hope that a BLONK NFT's unique look is appreciated. There are 4,444 BLONKS, a number Matto chose based on some simple criteria. First, it had to be in the thousands to support a community. Even if every collector owned 4, there would be over 1000 separate holders. Second, because the collection is extremely variable in visual aspects and can continually change, fewer BLONKS would create a collection that was less overwhelming to browse. Third, because BLONKS are all made of the same type of SVG shape (&lt;rect/&gt;'s), an edition size that consisted of the same digit was desired (1111, 2222, 3333, 4444, 5555, etc). Finally, because BLONKS are all made of rectangles (4-sided shapes), 4444 was chosen.</p>
+          <p>The 'meme' starting price of 0.0420 Eth was selected for memorability, humor, and affordability. 50% of the mint-proceeds are being transparently donated to charity through an <a href="https://app.endaoment.org/funds/892d256f-b550-4234-8439-f3441e83b1b4" target="_blank">Endaoment Donor Advised Fund</a> (a fund simply named "MonkMatto" and advised by - you guessed it - Matto). These kinds of Endaoment funds allow individuals and groups to donate to multiple organizations, and thanks to the blockchain, everything is transparent. Matto has decided to donate to 4 charities:</p>
+          <ul>
+            <li>$4500 was sent to <a href="https://www.nature.org/" target="_blank">The Nature Conservancy</a>. "The mission of The Nature Conservancy is to conserve the lands and waters on which all life depends. Our vision is a world where the diversity of life thrives, and people act to conserve nature for its own sake and its ability to fulfill our needs and enrich our lives."</li>
+            <li>$3000 was sent to <a href="https://outrightinternational.org/" target="_blank">OutRight Action International</a>. "OutRight is the only global LGBTIQ organization with consultative status and a permanent presence at the United Nations Headquarters, where we advocate for human rights and equality for LGBTIQ people, serve as secretariat of the <a href="https://unlgbticoregroup.org/" target="_blank">UN LGBTI Core Group</a> and act as a watchdog on all 193 world governments."</li>
+            <li>$3000 was sent to <a href="https://foodbankcenc.org/" target="_blank">Food Bank Of Central & Eastern North Carolina</a>. "Established in 1980, the food bank is a nonprofit organization that has provided food for people at risk of hunger in 34 counties for over 37 years. The food bank serves a network of more than 800 partner agencies such as soup kitchens, food pantries, shelters, and programs for children and adults…"</li>
+            <li>$1000 was sent to <a href="https://durhamarts.org/" target="_blank">Durham Arts Council</a>. "Durham Arts Council is a catalyst in the cultural development of Durham - it leads, inspires, and promotes excellence in and access to the creation, experience and active support of the arts for all the people of our community."</li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- faq -->
+      <section id="faq">
+        <details>
+          <summary><h3>FAQ (click to expand)</h3></summary>
+          <p><strong>Who got the pre-sale airdrop?</strong></p>
+          <p>The first 182 BLONKS were airdropped to the first 182 <a href="https://www.artblocks.io/project/181" target="_blank">FOCUS</a> collectors. 22 BLONKS were minted to an account <a href="https://looksrare.org/accounts/0x7d096CF619B36178b6121d22D50f7879e90dEA66" target="_blank">Matto controls</a>, to be used for future giveaways, rewards, etc, but none will be used to sell for profit. About 100 were airdropped to Matto's irl fam, irl friends, and internet frens. ~20 were airdropped via a casual giveaway in the Art Blocks discord, and a final 10 via a giveaway in Grailers discord. In total, 333 were airdropped, leaving 4,111 of the 4,444 BLONKS available for public mint.</p>
+          <p>After public sale opened, Matto minted/is minting additional BLONKS to anyone he feels is worthy of a free BLONKS, but never to any influencers for the sake of their influence (which would be lame and very unBLONKS like).</p>
+          <br>
+          <p><strong>Roadmap?</strong></p>
+          <p>The motivation of this project is to create something without any dependencies, and a roadmap is a selling point, which in effect would imply a sort of abstract dependency - something the project is relying on to somehow promote itself. So, to answer that question: nope.</p>
+          <br>
+          <p><strong><del>&nbsp;Roadmap? </del> &nbsp;Matto's future role?</strong></p>
+          <p>Main builder for BLONKS stuff, for fun and joy, to share with the world. <em>I likes the BLONKS, so probably going to keep having a blast with them!</em></p>
+          <br>
+          <p><strong>Is this a good investment? Will it make me money?</strong></p>
+          <p>Read the disclaimers / terms below.</p>
+        </details>
+      </section>
+
+      <!-- Acknowledgements -->
+      <section id="thanks">
+        <details>
+          <summary><h3>Acknowledgements (click to expand)</h3></summary>
+          <p><strong>I couldn't have launched BLONKS in May '22 without the technical contributions of some lovely people!</strong></p>
+          <ul>
+            <li><a href="https://github.com/Brechtpd/base64/blob/main/base64.sol" target="_blank">Brecht Devos published code</a> for encoding in base64, which is needed for on-chain and in-browser rendering svgs.</li>
+            <li><a href="https://mobile.twitter.com/ceruleanjulien" target="_blank">Julien</a> helped me get up to speed with testing in Hardhat, and was a great troubleshooting and brainstorm fren! 🙏</li>
+            <li><a href="https://twitter.com/ShaikTibout" target="_blank">Tib</a> and <a href="https://twitter.com/outer_pockets" target="_blank">outerpockets</a> both took peeks at various contract-control functions I used, and helped me feel more confident that my contracts were solid.</li>
+            <li><a href="https://twitter.com/sterlingcrispin" target="_blank">Sterling Cripsin</a> gave me a leg up with web3 integration - all the published tutorials out there are unnecessarily complex!</li>
+            <li><a href="https://javascript.plainenglish.io/how-to-convert-an-svg-to-an-image-in-the-browser-eec3d6298c07" target="_blank">John Au-Yeung's post</a> on converting an SVG to an image in the browser allowed me to add that function as an option to my url-parameter render tool.</li>
+            <li><a href="https://twitter.com/NCNFTs" target="_blank">Immutable Computer</a> helped me get a sales-tweet bot set up and running off a raspberry pi using python! (so much fun!)</li>
+          </ul>
+          <p>And guess who helped me with the amazingly robust backed for BLONKS? The one and only, ETHEREUM blockchain. Thanks for all the hard work!</p>
+          <p>That's mostly it on the technical side, for now, but there's plenty more that can be built and there'll be many others who will help make BLONKS the amazing project it's destined to be. I'll try to keep this updated, but here's a pre-emptive THANKS! to future contributors.</p>
+        </details>
+      </section>
+
+      <!-- terms -->
+      <section id="terms">
+        <h2>DISCLAIMERS / TERMS</h2>
+        <p>NOTHING ON THIS WEBSITE IS A FINANCIAL PRODUCT OR INVESTMENT. THESE ARE SOCIAL EXPERIMENTS AND ARTWORKS. YOU SHOULD NOT INTERACT WITH THIS WEBSITE WITH THE INTENT OF INVESTING OR FINANCIALLY PROFITING. THESE ARE WORTHLESS TOKENS AND BY INTERACTING WITH THIS WEBSITE YOU AGREE TO THESE TERMS. IF ANY PART OF THIS AGREEMENT IS DEEMED INVALID BY LAW THE REST OF THE AGREEMENT WILL STILL BE BINDING.</p>
+        <p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+        <br><hr>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+      <small>HTML built by Matto, using <a href="https://picocss.com/" target="_blank">Pico</a> • <a href="https://github.com/picocss/examples/blob/master/preview/index.html" target="_blank">(Pico Source code)</a></small>
+    </footer>
+</body></html>
