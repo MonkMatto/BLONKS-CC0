@@ -48,15 +48,24 @@ async function updateSampleSVGs() {
   let CONTEXTsvg = await uriContractAlchemy.methods.RANDOM_RENDER_SVG(7).call();
 
 
+  renderIntoFrame("BLONK-live", BLONKsvg);
+  renderIntoFrame("DarkBLONK-live", DarkBLONKsvg);
+  renderIntoFrame("PepeBLONK-live", PepeBLONKsvg);
+  renderIntoFrame("BLOOP-live", BLOOPsvg);
+  renderIntoFrame("AIGBLONK-live", AIGBLONK);
+  renderIntoFrame("SkullyBLONK-live", SkullyBLONKsvg);
+  renderIntoFrame("Cycles-live", Cyclessvg);
+  renderIntoFrame("CONTEXT-live", CONTEXTsvg);
+
   // AIGBLONK = await uriContractAlchemy.methods.RANDOM_RENDER_SVG(4).call();
-  document.getElementById("BLONK-live").innerHTML = BLONKsvg;
-  document.getElementById("DarkBLONK-live").innerHTML = DarkBLONKsvg;
-  document.getElementById("PepeBLONK-live").innerHTML = PepeBLONKsvg;
-  document.getElementById("BLOOP-live").innerHTML = BLOOPsvg;
-  document.getElementById("AIGBLONK-live").innerHTML = AIGBLONK;
-  document.getElementById("SkullyBLONK-live").innerHTML = SkullyBLONKsvg;
-  document.getElementById("Cycles-live").innerHTML = Cyclessvg;
-  document.getElementById("CONTEXT-live").innerHTML = CONTEXTsvg;
+  // document.getElementById("BLONK-live").innerHTML = BLONKsvg;
+  // document.getElementById("DarkBLONK-live").innerHTML = DarkBLONKsvg;
+  // document.getElementById("PepeBLONK-live").innerHTML = PepeBLONKsvg;
+  // document.getElementById("BLOOP-live").innerHTML = BLOOPsvg;
+  // document.getElementById("AIGBLONK-live").innerHTML = AIGBLONK;
+  // document.getElementById("SkullyBLONK-live").innerHTML = SkullyBLONKsvg;
+  // document.getElementById("Cycles-live").innerHTML = Cyclessvg;
+  // document.getElementById("CONTEXT-live").innerHTML = CONTEXTsvg;
 }
 
 // Uses the user's Web3 instance
@@ -233,6 +242,33 @@ async function previewSVG() {
     }
   } else {
     console.log(svg);
-    document.getElementById("svgPlaceholder").innerHTML = svg;
+    // document.getElementById("svgPlaceholder").innerHTML = svg;
+    renderIntoFrame("svgPlaceholder", svg);
   }
+}
+
+function renderIntoFrame(elementId, svg) {
+  const host = document.getElementById(elementId);
+  host.innerHTML = "";
+  const frame = document.createElement("iframe");
+  frame.setAttribute("scrolling", "no");
+  frame.style.border = "0";
+  frame.style.width = "100%";
+  frame.style.display = "block";
+
+  // Derive aspect ratio from the SVG's own viewBox; fall back to square.
+  let ratio = "1 / 1";
+  const vb = svg.match(/viewBox\s*=\s*["']\s*[\d.-]+\s+[\d.-]+\s+([\d.-]+)\s+([\d.-]+)/);
+  if (vb) {
+    const w = parseFloat(vb[1]), h = parseFloat(vb[2]);
+    if (w > 0 && h > 0) ratio = `${w} / ${h}`;
+  }
+  frame.style.aspectRatio = ratio;
+
+  frame.srcdoc =
+    '<!DOCTYPE html><html><head><style>' +
+    'html,body{margin:0;padding:0;background:transparent}' +
+    'svg{display:block;width:100%;height:auto}' +
+    '</style></head><body>' + svg + '</body></html>';
+  host.appendChild(frame);
 }
