@@ -67,12 +67,12 @@
           <a href="https://blonks.xyz/notes/pepeblonks.html">PepeBLONKS</a>,
           <a href="https://blonks.xyz/notes/skullyblonks.html">SkullyBLONKS</a> -->
         </p>
-        <section id="blonkimage">
+        <!-- <section id="blonkimage">
           <figure>
             <img src="../media/BLONK_row_5.png" alt="3 outputs from Cycles" />
             <figcaption>Outputs from the Cycles renderer.</figcaption>
           </figure>
-        </section>
+        </section> -->
       </hgroup>
     </header>
 
@@ -81,7 +81,20 @@
       <!-- Notes -->
       <section id="notes">
         <h1>Making Cycles</h1>
-        <p></p>
+        <p>I've wanted to make this shapeshifter for a long time, but some technical challenges slowed me down…a lot. The idea was to make something like Ensō (released on ArtBlocks.io in 2021), but as an animated SVG with hundreds of independent shapes. Creating it in JavaScript was easy, but making it in Solidity (the programming language of Ethereum) was a challenge.</p>
+        <section id="the-main-hurdle-gas" class="level4">
+        <h4>The Main Hurdle: Gas</h4>
+        <p>Interacting with smart contracts on the Ethereum Virtual Machine (EVM) has a cost, and it's measured in gas. Writing or altering data on the chain costs gas that is paid by the sender, but viewing information from the chain can be ‘free', a service provided by the computers that run the EVM. These computers put limits on how much gas can be used without payment, and calls to these viewing-only functions have to stay under their gas limit.</p>
+        <p>The viewing gas-limit is generous, sometimes between 30 and 50 million, but generative art scripts can have complex programming that execute hundreds or thousands of commands through recursion and loops. The first Cycles scripts I wrote that followed my typical SVG shapeshifter structure unfortunately used too much gas. WAY TO MUCH. Tests showed that renders would use billions to tens of billions of gas.</p>
+        </section>
+        <section id="the-other-challenge-stack-overflow" class="level4">
+        <h4>The Other Challenge: Stack Overflow</h4>
+        <p>You're only allowed so many variables at once in Solidity, otherwise you hit a stack overflow. There are a number of ways to deal with these, including breaking up functions, or passing multiple pieces of data as a single structure, like in an array. During the conversion process from JavaScript to Solidity, a lot of refactoring is needed to avoid stack overflows. I learn new techniques each time, and it turns out that utilizing one of these techniques could also be used to address the gas-limit challenge.</p>
+        </section>
+        <section id="string-array-to-the-rescue" class="level4">
+        <h4>String Array to the Rescue!</h4>
+        <p>Gas was a problem due to the usual way I'd been assembling the SVG strings: I was copying the entire string every time I had to add to it, and my script added to it hundreds of times. Thinking about these hundreds of pieces of data, I could store them in an array like I would do to avoid stack overflows, and then I'd only need to combine them once. It turns out that this tactic became possible a few years after I first released BLONKS, when MCOPY was added to Ethereum. Using it and string arrays, I could store many chunks of string data, assemble them, and reduce gas usage to only a few million - well below the view gas limit.</p>
+        <p>The technique works, and I used it inside the code block that assembles all the individual shapes seen in cycles. I'm still following my more ‘standard' procedure elsewhere in the script where the benefits of using the technique would be minimal. This new technique opens up some additional doorways for me, and I'm excited to explore other ideas I had previously set aside due to their heavy recursion.</p>
         <br />
         <hr />
         <a href="https://blonks.xyz">BLONKS HOME</a>
